@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Mi Amor!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9e3e3;
+            text-align: center;
+            color: #d14d72;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            top: -10px;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .message {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #d14d72;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b23a5a;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Feliz Cumpleaños, Mi Amor! 🎉💖</h1>
+    <div id="confetti-container"></div>
+
+    <div class="gallery">
+        <img src="foto1.jpg" alt="Nuestro primer día">
+        <img src="foto2.jpg" alt="Un viaje juntos">
+        <img src="foto3.jpg" alt="Momentos especiales">
+        <!-- Agrega más fotos aquí -->
+    </div>
+
+    <div class="message">
+        <p>Hola, mi vida,</p>
+        <p>Hoy es un día muy especial porque es tu cumpleaños, y quiero recordarte lo mucho que te amo. Cada momento a tu lado es un regalo para mí. Aquí hay algunos recuerdos de nuestro viaje juntos. 💕</p>
+        <button onclick="mostrarSorpresa()">Haz clic para una sorpresa</button>
+        <p id="sorpresa" style="display: none;">¡Eres la persona más especial en mi vida! Te amo más de lo que las palabras pueden expresar. 💌</p>
+    </div>
+
+    <script>
+        // Animación de confeti
+        function crearConfeti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confettiContainer.appendChild(confetti);
+            }
+        }
+        crearConfeti();
+
+        // Mostrar sorpresa
+        function mostrarSorpresa() {
+            document.getElementById('sorpresa').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
